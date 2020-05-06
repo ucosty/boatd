@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
     }
 
     updateWaterValue(value: Water): Water {
-        value.level = Math.max(((value.voltage / value.maxVoltage) * 100), 100);
+        value.level = Math.min(((value.voltage / value.maxVoltage) * 100), 100);
         return value;
     }
 }
