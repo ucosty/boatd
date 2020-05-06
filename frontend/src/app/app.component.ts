@@ -18,14 +18,15 @@ export class AppComponent implements OnInit {
     ngOnInit() {
         this.wasteWater = this.updateWaterValue({
             level: 100,
-            voltage: 6.7
+            voltage: 6.7,
+            maxVoltage: 6.7
         })
         this.waterService.getFreshWater()
             .subscribe(res => this.freshWater = this.updateWaterValue(res));
     }
 
     updateWaterValue(value: Water): Water {
-        value.level = Math.max(((value.voltage / 6.70) * 100), 100);
+        value.level = Math.max(((value.voltage / value.maxVoltage) * 100), 100);
         return value;
     }
 }
