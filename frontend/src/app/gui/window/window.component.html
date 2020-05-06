@@ -1,0 +1,14 @@
+<div class="window-wrapper"
+    ngDraggable
+    [handle]="windowHandle"
+    [style.width.px]="width"
+    [style.top.px]="top"
+    [style.left.px]="left">
+    <div class="window-border-wrap">
+        <div class="window-titlebar" #windowHandle>
+            <div class="window-menu-button"></div>
+            {{ title }}
+        </div>
+        <div class="window-content"><ng-content></ng-content></div>
+    </div>
+</div>
