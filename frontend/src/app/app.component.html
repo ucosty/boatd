@@ -1,9 +1,9 @@
 <app-toolchest></app-toolchest>
 
-<app-window title="Fresh Water Status" top="100" left="100" width="400" [windowControls]="true" [resizable]="true">
+<app-window title="Fresh Water Status" top="120" left="100" width="400" [windowControls]="true" [resizable]="true">
     <table *ngIf="freshWater">
         <tr>
-            <td>Gauge</td>
+            <td class="key">Gauge</td>
             <td>
                 <div class="gauge">
                     <div class="gauge-level" [style.width.%]="freshWater.volumePercentage"></div>
@@ -11,24 +11,24 @@
             </td>
         </tr>
         <tr>
-            <td>Water Level</td>
+            <td class="key">Water Level</td>
             <td>{{ freshWater.volumePercentage | number:'1.0-0' }}%</td>
         </tr>
         <tr>
-            <td>Volume</td>
-            <td>{{ freshWater.volume }} L</td>
+            <td class="key">Volume</td>
+            <td>{{ freshWater.volume | number }} L</td>
         </tr>
         <tr>
-            <td>Capacity</td>
-            <td>{{ freshWater.capacity }} L</td>
+            <td class="key">Capacity</td>
+            <td>{{ freshWater.capacity | number }} L</td>
         </tr>
         <tr>
-            <td>Voltage</td>
-            <td>{{ freshWater.voltage }} V</td>
+            <td class="key">Voltage</td>
+            <td>{{ freshWater.voltage | number }} V</td>
         </tr>
         <tr>
-            <td>Max Voltage</td>
-            <td>{{ freshWater.maxVoltage }} V</td>
+            <td class="key">Max Voltage</td>
+            <td>{{ freshWater.maxVoltage | number }} V</td>
         </tr>
         <tr>
             <td><button>Refill Tank</button></td>
@@ -37,10 +37,10 @@
 </app-window>
 
 
-<app-window title="Waste Water Status" top="100" left="600" width="400" [windowControls]="true" [resizable]="true">
+<app-window title="Waste Water Status" top="120" left="600" width="400" [windowControls]="true" [resizable]="true">
     <table *ngIf="wasteWater">
         <tr>
-            <td>Gauge</td>
+            <td class="key">Gauge</td>
             <td>
                 <div class="gauge">
                     <div class="gauge-level" [style.width.%]="wasteWater.volumePercentage"></div>
@@ -48,24 +48,24 @@
             </td>
         </tr>
         <tr>
-            <td>Water Level</td>
+            <td class="key">Water Level</td>
             <td>{{ wasteWater.volumePercentage | number:'1.0-0' }}%</td>
         </tr>
         <tr>
-            <td>Volume</td>
-            <td>{{ wasteWater.volume }} L</td>
+            <td class="key">Volume</td>
+            <td>{{ wasteWater.volume | number }} L</td>
         </tr>
         <tr>
-            <td>Capacity</td>
-            <td>{{ wasteWater.capacity }} L</td>
+            <td class="key">Capacity</td>
+            <td>{{ wasteWater.capacity | number }} L</td>
         </tr>
         <tr>
-            <td>Voltage</td>
-            <td>{{ wasteWater.voltage }} V</td>
+            <td class="key">Voltage</td>
+            <td>{{ wasteWater.voltage | number }} V</td>
         </tr>
         <tr>
-            <td>Max Voltage</td>
-            <td>{{ wasteWater.maxVoltage }} V</td>
+            <td class="key">Max Voltage</td>
+            <td>{{ wasteWater.maxVoltage | number }} V</td>
         </tr>
     </table>
 </app-window>
