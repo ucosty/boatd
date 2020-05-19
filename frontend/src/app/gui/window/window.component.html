@@ -1,14 +1,11 @@
-<div class="window-wrapper"
-    ngDraggable
-    [handle]="windowHandle"
-    [style.width.px]="width"
-    [style.top.px]="top"
-    [style.left.px]="left">
-    <div class="window-border-wrap">
-        <div class="window-titlebar" #windowHandle>
-            <div class="window-menu-button"></div>
+<div class="window-wrapper" ngDraggable [handle]="windowHandle" [style.width.px]="width" [style.top.px]="top" [style.left.px]="left">
+    <div class="window-border-wrap" [ngClass]="{'window-resizable': resizable}">
+        <div class="window-titlebar" [ngClass]="{'window-withcontrols': windowControls}" #windowHandle>
+            <div class="window-menu-button" *ngIf="windowControls"></div>
             {{ title }}
         </div>
-        <div class="window-content"><ng-content></ng-content></div>
+        <div class="window-content">
+            <ng-content></ng-content>
+        </div>
     </div>
 </div>

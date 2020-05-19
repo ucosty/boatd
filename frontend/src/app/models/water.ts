@@ -1,5 +1,7 @@
 export class Water {
-    public maxVoltage: number;
     public voltage: number;
-    public level: number;
+    public maxVoltage: number;
+    public volume: number;
+    public capacity: number;
+    public volumePercentage: number;
 }

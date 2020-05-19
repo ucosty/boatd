@@ -18,12 +18,6 @@ export class AppComponent implements OnInit, OnDestroy {
     }
     
     ngOnInit() {
-        this.wasteWater = this.updateWaterValue({
-            level: 100,
-            voltage: 6.7,
-            maxVoltage: 6.7
-        })
-
         this.updateTimer = timer(0, 5000)
             .subscribe(i => this.updateValues())
     }
@@ -34,11 +28,6 @@ export class AppComponent implements OnInit, OnDestroy {
 
     updateValues() {
         this.waterService.getFreshWater()
-            .subscribe(res => this.freshWater = this.updateWaterValue(res));
-    }
-
-    updateWaterValue(value: Water): Water {
-        value.level = Math.min(((value.voltage / value.maxVoltage) * 100), 100);
-        return value;
+            .subscribe(res => this.freshWater = res);
     }
 }

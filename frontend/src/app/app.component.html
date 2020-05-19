@@ -1,18 +1,26 @@
 <app-toolchest></app-toolchest>
 
-<app-window title="Fresh Water Status" top="100" left="100" width="400">
-    <table>
+<app-window title="Fresh Water Status" top="100" left="100" width="400" [windowControls]="true" [resizable]="true">
+    <table *ngIf="freshWater">
         <tr>
             <td>Gauge</td>
             <td>
                 <div class="gauge">
-                    <div class="gauge-level" [style.width.%]="freshWater.level"></div>
+                    <div class="gauge-level" [style.width.%]="freshWater.volumePercentage"></div>
                 </div>
             </td>
         </tr>
         <tr>
             <td>Water Level</td>
-            <td>{{ freshWater.level | number:'1.0-0' }}%</td>
+            <td>{{ freshWater.volumePercentage | number:'1.0-0' }}%</td>
+        </tr>
+        <tr>
+            <td>Volume</td>
+            <td>{{ freshWater.volume }} L</td>
+        </tr>
+        <tr>
+            <td>Capacity</td>
+            <td>{{ freshWater.capacity }} L</td>
         </tr>
         <tr>
             <td>Voltage</td>
@@ -29,8 +37,8 @@
 </app-window>
 
 
-<app-window title="Waste Water Status" top="350" left="100" width="400">
-    <table>
+<app-window title="Waste Water Status" top="100" left="600" width="400" [windowControls]="true" [resizable]="true">
+    <table *ngIf="wasteWater">
         <tr>
             <td>Gauge</td>
             <td>
