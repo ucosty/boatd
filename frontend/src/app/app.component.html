@@ -43,13 +43,21 @@
             <td>Gauge</td>
             <td>
                 <div class="gauge">
-                    <div class="gauge-level" [style.width.%]="wasteWater.level"></div>
+                    <div class="gauge-level" [style.width.%]="wasteWater.volumePercentage"></div>
                 </div>
             </td>
         </tr>
         <tr>
             <td>Water Level</td>
-            <td>{{ wasteWater.level | number:'1.0-0' }}%</td>
+            <td>{{ wasteWater.volumePercentage | number:'1.0-0' }}%</td>
+        </tr>
+        <tr>
+            <td>Volume</td>
+            <td>{{ wasteWater.volume }} L</td>
+        </tr>
+        <tr>
+            <td>Capacity</td>
+            <td>{{ wasteWater.capacity }} L</td>
         </tr>
         <tr>
             <td>Voltage</td>
